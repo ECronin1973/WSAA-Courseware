@@ -5,8 +5,11 @@ Welcome to Edward Cronin's repository for the Web Services and Applications Modu
 
 ## Table of Contents
 [Overview](#overview)
+
 [Author](#author)
+
 [How to Download this Repository](#how-to-download-this-repository)
+
 [Code of Conduct](#code-of-conduct)
 
 ## Overview
