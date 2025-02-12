@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Premier League, Liverpool, Table, Arsenal, Nothingham Forest, Chelsea, Manchester City">
+    <title>Premier League Table Results 12.02.2025</title>
+    <style>
+        body {
+            background-color: #FFECB3; /* Light background color */
+        }
+        /* This is an internal style and relates to the table and its columns which have different colors. Colors are based on Hex values. */
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            padding: 8px;
+        }
+        .position {
+            background-color: #ff9999;
+        }
+        .team {
+            background-color: #99ff99;
+        }
+        .points {
+            background-color: #ffff99;
+        }
+        /* Flash class used to create a flashing effect for Liverpool's results */
+        .flash {
+            animation: flash 1s infinite;
+        }
+        @keyframes flash {
+            0% { background-color: #ff9999; }
+            50% { background-color: #40e0d0; } /* Turquoise Color
+            100% { background-color: #ff9999; }
+        }
+    </style>
+</head>
+<body>
+    <p id="welcome-message"><em>Hello World!!, welcome to my webpage which outlines the Premier League table as of today, 12/02/2025, showing the top five teams with their respective positions, team name and points.</em></p>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            alert("Hello World, Welcome to the Premier League Table Results page!");
+        });
+    </script>
+<!-- The information is only relevant to results displayed on 12/02/2025 at 09:00hrs. Later games during the day are not displayed. Results need to be verified and may need to be updated this evening. -->
+    <h1>Top Five Premier League Table Results 12.02.2025</h1>
+    <table>
+        <tr>
+            <th class="position">Position</th>
+            <th class="team">Team</th>
+            <th class="points">Points</th>
+        </tr>
+        <tr>
+            <td class="position flash">1</td>
+            <td class="flash">Liverpool FC</td>
+            <td class="flash">56</td>
+        </tr>
+        <tr>
+            <td class="position">2</td>
+            <td>Arsenal FC</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td class="position">3</td>
+            <td>Nottingham Forest</td>
+            <td>47</td>
+        </tr>
+        <tr>
+            <td class="position">4</td>
+            <td>Chelsea FC</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td class="position">5</td>
+            <td>Manchester City</td>
+            <td>41</td>
+        </tr>
+    </table>
+</body>
+</html>
