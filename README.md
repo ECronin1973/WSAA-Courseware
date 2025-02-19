@@ -156,7 +156,7 @@ __Congratulations! You have drawn a pair: ['8', '8']__
 
 In order to complete this task, I did the following
 
-- I viewed the lectures in ATU Course 24-25: 8640 -- WEB SERVICES AND APPLICATIONS to understand how Python to interacts with web services and APIs.
+- I viewed the lectures in ATU Course 24-25: 8640 -- WEB SERVICES AND APPLICATIONS to understand how Python interacts with web services and APIs.
 - I read a tutorial in W3Schools on Web APIs to understand about API's further.
 - I looked on google and viewed a youtube video on 'deck of cards api' so that I could understand better how the Deck of Cards API works.
 
