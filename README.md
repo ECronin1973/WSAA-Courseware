@@ -39,8 +39,8 @@ __Email:__ g00425645@atu.ie
 ## How to download this repository
 
 Logon to GitHub to locate the student's specific repository dedicated to this project located at [My repository for WSAA-Courseware](https://github.com/ECronin1973/WSAA-Courseware) on GitHub .
-Click the download button.
-To run the code, ensure that python is installed.
+- Click the download button.
+- To run the code, ensure that python is installed.
 
 ## Code of Conduct
 
@@ -52,7 +52,7 @@ A code of conduct governs the use of this repository and has been uploaded withi
 
 ### Overview
 
-This assignment involves writing a Python program that interacts with the Deck of Cards API to shuffle a deck, draw 5 cards, and check for special hands (pairs, triples, straights, or all cards of the same suit). The program prints the details of the drawn cards and provides feedback on any special hands drawn.  The following code is used to complete this assignment
+This assignment involves writing a Python program that interacts with the Deck of Cards API to shuffle a deck, draw 5 cards, and check for special hands (pairs, triples, straights, or all cards of the same suit). The program prints the details of the drawn cards and provides feedback on any special hands drawn.
 
 ### Overview
 
@@ -77,6 +77,8 @@ import requests
 https://docs.python.org/3/library/collections.html
 from collections import Counter
 ```
+
+**The following code is used to complete this task**
 
 ```python
 # Shuffle the deck
@@ -135,6 +137,7 @@ check_hand(cards)
 Save the program as assignment2-carddraw.py.
 
 ### Run the program using Python:
+
 ```python
 python assignment2-carddraw.py
 ```
