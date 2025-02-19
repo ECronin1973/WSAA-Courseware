@@ -16,8 +16,6 @@ Welcome to Edward Cronin's repository for the Web Services and Applications Modu
 
 [Assignment 2: Card Draw](#assignment-2-card-draw)
 
-
-
 ## Overview
 
 This README file is structured into three main sections:
@@ -52,12 +50,35 @@ A code of conduct governs the use of this repository and has been uploaded withi
 
 ### Assignment 2: Card Draw
 
-This assignment involves writing a Python program that interacts with the Deck of Cards API to shuffle a deck, draw 5 cards, and check for special hands (pairs, triples, straights, or all cards of the same suit). The program prints the details of the drawn cards and provides feedback on any special hands drawn.  The following code is used to complete this assignment;
+### Overview
+
+This assignment involves writing a Python program that interacts with the Deck of Cards API to shuffle a deck, draw 5 cards, and check for special hands (pairs, triples, straights, or all cards of the same suit). The program prints the details of the drawn cards and provides feedback on any special hands drawn.  The following code is used to complete this assignment
+
+### Overview
+
+**API Interaction:** Learn to get information from the internet using a tool called an API.
+
+**Data Retrieval:** Get and understand the card data from the API using a library called requests.
+
+**Data Processing:** Find the value and suit of each card from the API response.
+
+**Hand Evaluation:** Write code to check if you have special card combinations like pairs or straights.
+
+**Output:** Show the details of the drawn cards and the results of the check on the screen
+
+# Import relevant Libraries for Completion of Assignment Two
 
 ```python
+# 'import requests' lets you easily send and handle web requests in Python to interact with web services and APIs.
+https://pypi.org/project/requests/
 import requests
-from collections import Counter
 
+# The Counter class is a dictionary subclass designed for counting hashable objects. It is particularly useful for tallying elements in an iterable, such as a list or a string.
+https://docs.python.org/3/library/collections.html
+from collections import Counter
+```
+
+```python
 # Shuffle the deck
 # This makes an API call to shuffle a deck of cards and returns the deck ID
 shuffle_response = requests.get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
@@ -109,18 +130,18 @@ def check_hand(cards):
 check_hand(cards)
 ```
 
-### How to Run the assignment2-carddraw.py program
+### Save the assignment2-carddraw.py program
 
-Firstly, save the program as assignment2-carddraw.py.
+Save the program as assignment2-carddraw.py.
 
 ### Run the program using Python:
 ```python
 python assignment2-carddraw.py
 ```
 
-#### Example Output
+#### Example of Output
 
-__The following is an example of running this program__
+__The following is an example of output from running this program__
 
 Drawn Cards:
 - 8 of HEARTS
@@ -131,4 +152,25 @@ Drawn Cards:
 
 __Congratulations! You have drawn a pair: ['8', '8']__
 
+## Further Reading Performed
 
+In order to complete this task, I did the following
+
+- I viewed the lectures in ATU Course 24-25: 8640 -- WEB SERVICES AND APPLICATIONS to understand how Python to interacts with web services and APIs.
+- I read a tutorial in W3Schools on Web APIs to understand about API's further.
+- I looked on google and viewed a youtube video on 'deck of cards api' so that I could understand better how the Deck of Cards API works.
+
+## References
+
+The following online resources were used to complete Assignment 2 in `assignments folder` and compile content in the Assignment 2: Card Draw section of the `README.md` document:
+
+1. [ATU Lectures - Applied Statistics, Mr Andrew Beatty](https://vlegalwaymayo.atu.ie/course/view.php?id=12365)
+2. [Writing README.md files on GitHub](https://help.github.com/en/articles/basic-writing-and-formatting-syntax)
+3. [Creating tables in Markdown](https://www.makeuseof.com/tag/create-markdown-table/)
+4. [Web APIs- Introduction](https://www.w3schools.com/js/js_api_intro.asp)
+5. [Deck of Cards An API](https://deckofcardsapi.com/)
+6. [Youtube Video - Deck of Cards - An API](https://www.youtube.com/watch?v=qF6zUptypGE)
+7. [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
+8. [GitHub Documentation - About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+
+# END
