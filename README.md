@@ -16,6 +16,8 @@ Welcome to Edward Cronin's repository for the Web Services and Applications Modu
 
 [Assignment 2: Card Draw](#assignment-2-card-draw)
 
+[Assignment 3: CSO Data Retrieval](#assignment-3-cso-data-retrieval)
+
 ## Overview
 
 This README file is structured into three main sections:
@@ -175,5 +177,89 @@ The following online resources were used to complete Assignment 2 in `assignment
 6. [Youtube Video - Deck of Cards - An API](https://www.youtube.com/watch?v=qF6zUptypGE)
 7. [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
 8. [GitHub Documentation - About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+
+# END
+
+### Assignment 3: CSO Data Retrieval
+
+### Overview
+
+This assignment involves writing a Python program that retrieves the dataset for the "exchequer account (historical series)" from the Central Statistics Office (CSO) API and saves it to a JSON file. The program prints a success message if the data is successfully retrieved and saved.
+
+### Overview
+
+__API Interaction:__ Gain proficiency in retrieving information from the internet using APIs.
+
+__Data Retrieval:__ Acquire and interpret data from the CSO API with the help of the requests library.
+
+__Data Processing:__ Store the retrieved data efficiently in a JSON file.
+
+__Output:__ Display a success message upon successfully retrieving and saving the data.
+
+# Import relevant Libraries for Completion of Assignment Three
+
+```python
+# 'import requests' lets you easily send and handle web requests in Python to interact with web services and APIs.
+https://pypi.org/project/requests/
+import requests
+
+# 'import json' lets you work with JSON data in Python, including reading from and writing to JSON files.
+https://docs.python.org/3/library/json.html
+import json
+```
+
+**The following code is used to complete this task**
+
+```python
+url = "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/FIQ02/JSON-stat/2.0/en"
+response = requests.get(url)
+
+if response.status_code == 200:
+    data = response.json()
+    with open("cso.json", "w") as file:
+        json.dump(data, file, indent=4)
+    print("Data successfully retrieved and saved to cso.json")  # Success message
+else:
+    print("Failed to retrieve data")
+```
+
+### Save the assignment03-cso.py program
+
+Save the program as assignment03-cso.py.
+
+### Run the program using Python:
+
+```python
+python assignment03-cso.py
+```
+
+#### Example of Output
+
+__The following is an example of output from running this program__
+
+```
+Data successfully retrieved and saved to cso.json
+```
+
+## Further Reading Performed
+
+In order to complete this task, I did the following
+
+- I viewed the API CSO Practical recording (40 minutes) by Mr Andrew Beatty to learn how to navigate and interact with CSO/  Also how to build code to perform functions to complete this assignment.
+- I read a Python Error Handling in W3schools to understand what messages should be returned when running code.
+
+## References
+
+The following online resources were used to complete Assignment 3 in `assignments folder` and compile content in the Assignment 3: CSO Data Retrieval section of the `README.md` document:
+
+1. [ATU Lectures - Applied Statistics, Mr Andrew Beatty](https://vlegalwaymayo.atu.ie/course/view.php?id=12365)
+2. [Writing README.md files on GitHub](https://help.github.com/en/articles/basic-writing-and-formatting-syntax)
+3. [Creating tables in Markdown](https://www.makeuseof.com/tag/create-markdown-table/)
+4. [Web APIs- Introduction](https://www.w3schools.com/js/js_api_intro.asp)
+5. [CSO API Documentation](https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/FIQ02/JSON-stat/2.0/en)
+6. [Python Error Handling](https://www.w3schools.com/python/gloss_python_error_handling.asp)
+7. [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
+8. [GitHub Documentation - About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
+9. [API: CSO Practical](https://atlantictu-my.sharepoint.com/:v:/g/personal/andrew_beatty_atu_ie/ERFqcRY7IGFDv2RR_J79WFIBa7RBwdDaLmV0FflQOyPTzQ?e=gm1vN8)
 
 # END
