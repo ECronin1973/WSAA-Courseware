@@ -233,9 +233,9 @@ Save the program as assignment03-cso.py.
 python assignment03-cso.py
 ```
 
-#### Example of Output
+#### Success Message
 
-__The following is an example of output from running this program__
+__The following is success message displayed from running this program__
 
 ```
 Data successfully retrieved and saved to cso.json
