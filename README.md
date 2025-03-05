@@ -245,7 +245,7 @@ Data successfully retrieved and saved to cso.json
 
 In order to complete this task, I did the following
 
-- I viewed the API CSO Practical recording (40 minutes) by Mr Andrew Beatty to learn how to navigate and interact with CSO/  Also how to build code to perform functions to complete this assignment.
+- I viewed the API CSO Practical recording (40 minutes) by Mr Andrew Beatty to learn how to navigate and interact with CSO.  The video thought me how what code is useful to perform functions to complete this assignment.
 - I read a Python Error Handling in W3schools to understand what messages should be returned when running code.
 
 ## References
