@@ -18,6 +18,8 @@ Welcome to Edward Cronin's repository for the Web Services and Applications Modu
 
 [Assignment 3: CSO Data Retrieval](#assignment-3-cso-data-retrieval)
 
+[Assignment 4: GitHub File Update](#assignment-4-github-file-update)
+
 ## Overview
 
 This README file is structured into three main sections:
@@ -56,7 +58,7 @@ A code of conduct governs the use of this repository and has been uploaded withi
 
 This assignment involves writing a Python program that interacts with the Deck of Cards API to shuffle a deck, draw 5 cards, and check for special hands (pairs, triples, straights, or all cards of the same suit). The program prints the details of the drawn cards and provides feedback on any special hands drawn.
 
-### Overview
+### Objective
 
 **API Interaction:** Learn to get information from the internet using a tool called an API.
 
@@ -186,7 +188,7 @@ The following online resources were used to complete Assignment 2 in `assignment
 
 This assignment involves writing a Python program that retrieves the dataset for the "exchequer account (historical series)" from the Central Statistics Office (CSO) API and saves it to a JSON file. The program prints a success message if the data is successfully retrieved and saved.
 
-### Overview
+### Objective
 
 __API Interaction:__ Gain proficiency in retrieving information from the internet using APIs.
 
@@ -261,5 +263,135 @@ The following online resources were used to complete Assignment 3 in `assignment
 7. [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
 8. [GitHub Documentation - About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes)
 9. [API: CSO Practical](https://atlantictu-my.sharepoint.com/:v:/g/personal/andrew_beatty_atu_ie/ERFqcRY7IGFDv2RR_J79WFIBa7RBwdDaLmV0FflQOyPTzQ?e=gm1vN8)
+
+# END
+
+### Assignment 4: GitHub File Update
+
+### Overview
+
+This assignment involves writing a Python program that uses the GitHub API to update a file in a repository. The program fetches the content of a specified file, replaces all occurrences of a specific name, and commits the updated content back to the repository.
+
+### Objective
+
+__API Interaction:__ Learn to interact with the GitHub API to access and modify repository content.  Input a config file which contains an Github key to interact with a private GitHub repository "ECronin1973/aprivateone"
+
+__Data Retrieval:__ Fetch the content of my own generated file titled AndrewJacksonStory.txt from the private GitHub repository "ECronin1973/aprivateone" .
+
+__Data Processing:__ Replace all occurrences of the name 'Andrew' with the name 'Edward' in the file content.
+
+__Output:__ Commit the updated file content back to the repository and print a success message.
+
+# Import relevant Libraries for Completion of Assignment Four
+
+```python
+
+# 'from github import Github' lets you interact with the GitHub API using the PyGithub library.
+https://pygithub.readthedocs.io/en/latest/
+from github import Github
+
+# 'import json' lets you work with JSON data in Python, including reading from and writing to JSON files.
+https://docs.python.org/3/library/json.html
+import json
+
+```
+
+## The following code is used to complete this task
+
+```python
+from github import Github
+import json
+try:
+    from config import config as cfg
+except ImportError:
+    print("Error: config module not found. Ensure config.py is in the same directory or in the Python path.")
+    exit(1)
+
+# Fetch the API key from the configuration file
+apikey = cfg["githubkeyassignment4"]
+
+# Initialize the GitHub client using the API key
+g = Github(apikey)
+
+# Target repository name
+repo_name = "ECronin1973/aprivateone"
+
+# Define the path to the file you want to modify within the repository
+file_path = "AndrewJacksonStory.txt"  # Specify the file to be edited
+
+try:
+    # Access the repository using the GitHub client
+    repo = g.get_repo(repo_name)
+    
+    # Display all files in the root directory of the repository
+    print("Repository contents:")
+    contents = repo.get_contents("")
+    while contents:
+        file_or_dir = contents.pop(0)
+        print(f"{file_or_dir.path} - {'File' if file_or_dir.type == 'file' else 'Directory'}")
+        if file_or_dir.type == "dir":
+            contents.extend(repo.get_contents(file_or_dir.path))
+    
+    # Fetch the content of the specified file from the repository
+    file_content = repo.get_contents(file_path, ref="main")
+    content = file_content.decoded_content.decode("utf-8")
+    print(f"\nOriginal content of {file_path}:\n{content}\n")
+
+    # Replace all occurrences of the name "Andrew" with "Edward"
+    updated_content = content.replace("Andrew", "Edward")
+
+    # Commit the updated file content back to the repository
+    repo.update_file(
+        file_path,
+        "Replaced 'Andrew' with 'Edward'",
+        updated_content,
+        file_content.sha,
+        branch="main"
+    )
+    print(f"File '{file_path}' updated and changes committed successfully.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+
+```
+
+### Save the assignment04-github.py program
+
+Save the program as assignment04-github.py.
+
+### Run the program using Python:
+
+```python
+python assignment04-github.py
+```
+
+### Example of Output
+
+The following is an example of output from running this program
+
+Repository contents:
+AndrewJacksonStory.txt - File
+Original content of AndrewJacksonStory.txt:
+Andrew Jackson was the seventh President of the United States.
+
+File 'AndrewJacksonStory.txt' updated and changes committed successfully.
+
+### Further Reading Performed
+
+In order to complete this task, I did the following
+
+- I viewed the lectures in ATU Course 24-25: 8640 -- WEB SERVICES AND APPLICATIONS to understand how Python interacts with the GitHub API.
+- I read the PyGithub documentation to understand how to use the library for interacting with GitHub API v3.
+- I read GitHub REST API documentation to learn more on how to create integrations, retrieve data, and automate workflows with the GitHub REST API.
+
+### References
+
+The following online resources were used to complete Assignment 4 in assignments folder and compile content in the Assignment 4: GitHub File Update section of the README.md document:
+
+1. [ATU Lectures - Applied Statistics, Mr Andrew Beatty](https://vlegalwaymayo.atu.ie/course/view.php?id=12365)
+2. [Writing README.md files on GitHub](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+3. [Creating tables in Markdown](https://www.makeuseof.com/tag/create-markdown-table/)
+4. [PyGithub Documentation](https://github.com/PyGithub/PyGithub)
+5. [GitHub API Documentation](https://docs.github.com/en/rest?apiVersion=2022-11-28)
+6. [YouTube Video - Using the GitHub API with Python](https://youtu.be/OvfLavRD1Os)
 
 # END
